@@ -20,3 +20,7 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::post('/subscription', 'HomeController@subscription');
+Route::post(
+    'stripe/webhook',
+    '\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook'
+);

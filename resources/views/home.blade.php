@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    You are logged in! {{ Auth::user()->subscription('main')->cancelled() ? "Cancelada" : "Ativa"}}
                     <div>
                         <form action="/subscription" method="POST">
                             {{ csrf_field() }}
